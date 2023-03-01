@@ -17,22 +17,19 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
-            Text(
-              'data',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 30),
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.home),
+                Text(
+                  'data',
+                  style: TextStyle(fontSize: 30),
+                ),
+              ],
             ),
-            Text(
-              'data',
-              style: TextStyle(fontSize: 30),
-            ),
-            Text(
-              'data',
-              style: TextStyle(fontSize: 30),
-            ),
-            Text(
+            const Text(
               'data',
               style: TextStyle(fontSize: 30),
             ),
