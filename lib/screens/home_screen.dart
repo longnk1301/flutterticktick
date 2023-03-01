@@ -14,27 +14,40 @@ class HomeScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ))
       ]),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.home),
-                Text(
-                  'data',
-                  style: TextStyle(fontSize: 30),
-                ),
-              ],
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.orange,
             ),
-            const Text(
-              'data',
-              style: TextStyle(fontSize: 30),
-            ),
-          ],
-        ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.add_circle),
+                    label: const Text('Add Reminder'),
+                  ),
+                  const TextButton(
+                    onPressed: null,
+                    child: Text('Add List'),
+                  ),
+                ]),
+          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: const [
+          //     Icon(Icons.home),
+          //     Text(
+          //       'data',
+          //       style: TextStyle(fontSize: 30),
+          //     ),
+          //   ],
+          // ),
+        ],
       ),
     );
   }
