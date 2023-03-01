@@ -9,9 +9,36 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(actions: [
         TextButton(
             onPressed: () {},
-            child: const Text('Edit', style: TextStyle(color: Colors.white)))
+            child: const Text(
+              'Edit',
+              style: TextStyle(color: Colors.white),
+            ))
       ]),
-      body: Container(child: const Text('data')),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const [
+            Text(
+              'data',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(
+              'data',
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(
+              'data',
+              style: TextStyle(fontSize: 30),
+            ),
+            Text(
+              'data',
+              style: TextStyle(fontSize: 30),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
