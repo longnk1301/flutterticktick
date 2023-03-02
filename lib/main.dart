@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
             color: Colors.black,
           ),
           brightness: Brightness.dark),
-      routes: {'/': (context) => const HomeScreen()},
+      routes: {'/': (context) => HomeScreen()},
     );
   }
 }
