@@ -17,8 +17,18 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              color: Colors.orange,
+            child: GridView.count(
+              crossAxisCount: 3,
+              childAspectRatio: 1 / 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              padding: const EdgeInsets.all(10),
+              children: [
+                Container(color: Colors.orange),
+                Container(color: Colors.red),
+                Container(color: Colors.blue),
+                Container(color: Colors.green)
+              ],
             ),
           ),
           Container(
@@ -37,16 +47,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ]),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: const [
-          //     Icon(Icons.home),
-          //     Text(
-          //       'data',
-          //       style: TextStyle(fontSize: 30),
-          //     ),
-          //   ],
-          // ),
         ],
       ),
     );

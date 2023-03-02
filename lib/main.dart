@@ -13,13 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
-      routes: {'/': (context) => const HomeScreen()},
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.black,
           appBarTheme: const AppBarTheme(
             color: Colors.black,
           ),
           brightness: Brightness.dark),
+      routes: {'/': (context) => const HomeScreen()},
     );
   }
 }
