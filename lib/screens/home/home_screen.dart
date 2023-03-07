@@ -4,8 +4,15 @@ import 'package:flutterticktick/screens/home/footer.dart';
 
 import 'grid_view_items.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String layoutType = 'grid';
 
   CategoryCollection categoryCollection = CategoryCollection();
 
@@ -14,10 +21,20 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(actions: [
         TextButton(
-            onPressed: () {},
-            child: const Text(
-              'Edit',
-              style: TextStyle(color: Colors.white),
+            onPressed: () {
+              if (layoutType == 'grid') {
+                setState(() {
+                  layoutType = 'list';
+                });
+              } else {
+                setState(() {
+                  layoutType = 'grid';
+                });
+              }
+            },
+            child: Text(
+              layoutType == 'grid' ? 'Edit' : 'Done',
+              style: const TextStyle(color: Colors.white),
             ))
       ]),
       body: Column(
