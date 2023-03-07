@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +7,7 @@ import '../common.widgets/category_icon.dart';
 import 'category.dart';
 
 class CategoryCollection {
-  final List<Category> categories = [
+  final List<Category> _categories = [
     Category(
         id: 'all',
         name: 'All',
@@ -35,4 +37,19 @@ class CategoryCollection {
           iconData: CupertinoIcons.flag_fill,
         )),
   ];
+  //Public List: can remove, access, insert
+  // List<Category> get categories => _categories; commented
+
+  //UnmodifiedList: can't remove, insert in the outside
+  UnmodifiableListView<Category> get categories =>
+      UnmodifiableListView(_categories);
+
+  //So, how to remove and insert in the outside?
+  Category removeItem(index) {
+    return _categories.removeAt((index));
+  }
+
+  void insertItem(index, item) {
+    _categories.insert(index, item);
+  }
 }
