@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterticktick/models/category_collection.dart';
 import 'package:flutterticktick/screens/home/footer.dart';
+import 'package:flutterticktick/screens/home/list_view_items.dart';
 
 import 'grid_view_items.dart';
 
@@ -40,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Expanded(
-            child: GridViewItems(categoryCollection: categoryCollection),
+            child: layoutType == 'grid'
+                ? GridViewItems(categoryCollection: categoryCollection)
+                : ListViewItems(categoryCollection: categoryCollection),
           ),
           const Footer(),
         ],
