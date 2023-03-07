@@ -28,6 +28,11 @@ class _ListViewItemsState extends State<ListViewItems> {
       children: widget.categoryCollection.categories
           .map(
             (category) => ListTile(
+              onTap: () {
+                setState(() {
+                  category.toggleCheckbox();
+                });
+              },
               key: UniqueKey(),
               tileColor: Colors.grey[800],
               title: Row(
@@ -38,9 +43,19 @@ class _ListViewItemsState extends State<ListViewItems> {
                 ],
               ),
               leading: Container(
-                decoration: const BoxDecoration(
-                    color: Colors.blueAccent, shape: BoxShape.circle),
-                child: const Icon(Icons.check),
+                decoration: BoxDecoration(
+                  color: category.isChecked
+                      ? Colors.blueAccent
+                      : Colors.transparent,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                      color:
+                          category.isChecked ? Colors.blueAccent : Colors.grey),
+                ),
+                child: Icon(
+                  Icons.check,
+                  color: category.isChecked ? Colors.white : Colors.transparent,
+                ),
               ),
               trailing: const Icon(Icons.reorder),
             ),

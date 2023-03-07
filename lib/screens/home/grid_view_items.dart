@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../models/category.dart';
 import '../../models/category_collection.dart';
 
 class GridViewItems extends StatelessWidget {
-  GridViewItems({super.key, required this.categoryCollection});
+  const GridViewItems({super.key, required this.categories});
 
-  CategoryCollection categoryCollection = CategoryCollection();
+  final List<Category> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class GridViewItems extends StatelessWidget {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       padding: const EdgeInsets.all(10),
-      children: categoryCollection.categories
+      children: categories
           .map((category) => Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

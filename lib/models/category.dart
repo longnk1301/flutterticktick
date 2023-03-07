@@ -4,7 +4,7 @@ class Category {
   String id;
   String name;
   final CategoryIcon icon;
-  bool? isChecked;
+  bool isChecked;
 
   // Category(this.id, this.name, this.isChecked); //constructor
   // var category = Category('1', 'All', true);
@@ -13,7 +13,11 @@ class Category {
     required this.id,
     required this.name,
     required this.icon,
-    this.isChecked,
+    this.isChecked = true,
   }); //constructor
   // var category = Category(id: '1', name: 'All', isChecked: true);
+
+  toggleCheckbox() {
+    isChecked = !isChecked;
+  }
 }
