@@ -7,7 +7,10 @@ const LIST_VIEW_HEIGHT = 70.0;
 class ListViewItems extends StatefulWidget {
   final CategoryCollection categoryCollection;
 
-  const ListViewItems({super.key, required this.categoryCollection});
+  const ListViewItems({
+    Key? key,
+    required this.categoryCollection,
+  }) : super(key: key);
 
   @override
   State<ListViewItems> createState() => _ListViewItemsState();

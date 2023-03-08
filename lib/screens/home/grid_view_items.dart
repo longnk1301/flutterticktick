@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/category.dart';
-import '../../models/category_collection.dart';
 
 class GridViewItems extends StatelessWidget {
   const GridViewItems({super.key, required this.categories});
